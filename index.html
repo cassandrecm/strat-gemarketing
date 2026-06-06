@@ -716,5 +716,10 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('h1, h2, h3').forEach(el => {
+    el.innerHTML = el.innerHTML.replace(/['‘’ʼ]/g, '<span style="font-family:\'Space Grotesk\',sans-serif">$&</span>');
+  });
+</script>
 </body>
 </html>
