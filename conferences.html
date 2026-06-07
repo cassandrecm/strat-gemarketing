@@ -198,6 +198,113 @@
       .sujets-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── LIVRE ── */
+    #livre {
+      background: var(--noir);
+      padding: 100px 32px;
+    }
+    .livre-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .livre-visuel {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .book-mockup {
+      position: relative; width: 240px; height: 320px;
+      transform: perspective(800px) rotateY(-15deg);
+      filter: drop-shadow(-20px 20px 40px rgba(0,0,0,.6));
+    }
+    .book-cover {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #8B1A1A 0%, #B81C1C 40%, #6B1010 100%);
+      border-radius: 4px 12px 12px 4px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 32px 24px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .book-cover::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 20px;
+      background: rgba(0,0,0,.35);
+      border-radius: 4px 0 0 4px;
+    }
+    .book-cover::after {
+      content: '';
+      position: absolute; inset: 12px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 4px;
+    }
+    .book-title {
+      font-family: 'The Seasons', serif;
+      font-size: 22px; color: #fff;
+      line-height: 1.2; margin-bottom: 16px;
+      position: relative; z-index: 1;
+    }
+    .book-author {
+      font-size: 12px; color: rgba(255,255,255,.7);
+      letter-spacing: .1em; text-transform: uppercase;
+      position: relative; z-index: 1;
+    }
+    .book-deco {
+      font-size: 48px; margin-bottom: 16px;
+      position: relative; z-index: 1; opacity: .6;
+    }
+    .livre-badge {
+      position: absolute; top: -16px; right: -16px;
+      background: #fff; color: var(--rouge);
+      width: 72px; height: 72px; border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-weight: 700; font-size: 11px; text-align: center;
+      line-height: 1.2; z-index: 2;
+      box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    }
+    .livre-badge strong { font-size: 18px; display: block; }
+    .livre-content { color: #fff; }
+    .livre-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--rouge);
+      margin-bottom: 16px; display: block;
+    }
+    .livre-content h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(30px, 4vw, 50px);
+      font-weight: normal; line-height: 1.1;
+      margin-bottom: 24px; color: #fff;
+    }
+    .livre-content h2 em { font-style: italic; color: rgba(255,255,255,.55); }
+    .livre-desc {
+      font-size: 16px; color: rgba(255,255,255,.65);
+      line-height: 1.8; margin-bottom: 28px;
+    }
+    .livre-details {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-bottom: 36px;
+    }
+    .livre-detail {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,.55);
+    }
+    .livre-detail span.dot {
+      width: 6px; height: 6px;
+      background: var(--rouge); border-radius: 50%; flex-shrink: 0;
+    }
+    .livre-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-blanc { background: #fff; color: var(--noir); }
+    .btn-blanc:hover { background: var(--creme); }
+    .livre-dispo {
+      font-size: 13px; color: rgba(255,255,255,.4);
+      font-style: italic;
+    }
+    @media (max-width: 900px) {
+      .livre-inner { grid-template-columns: 1fr; gap: 48px; }
+      .livre-visuel { order: -1; }
+    }
+
     /* ── VIDÉO ── */
     #video-conf {
       padding: 100px 32px;
@@ -354,6 +461,39 @@
         <p>Je me prénomme Cassandre CM, je suis une jeune maman de jumeaux dans le début de ma trentaine. J'ai la chance de mener une très belle vie et d'être heureuse, mais je n'en suis pas arrivée là sans effort.</p>
         <p>En 2019, le contact avec la réalité se rompt lors d'une crise psychotique et je perds tous mes repères — domicile, relation amoureuse et travail. Je séjourne dans une aile psychiatrique où les traitements ne fonctionnent pas, et cette noirceur me conduit à vouloir m'enlever la vie. Avec l'aide de mes proches, un changement de médication et un soupçon de chance, je réussis enfin à sortir ma tête de l'eau.</p>
         <p>Armée de résilience, je retrouve une stabilité après plusieurs mois. Maintenant rétablie et coexistant avec la maladie bipolaire, je souhaite aider les gens à se libérer de la stigmatisation. Je veux être celle que j'aurais aimé rencontrer lors de mon rétablissement : celle qui prouve que même avec un trouble grave de santé mentale, il est possible de mener une vie équilibrée et épanouissante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LIVRE ── -->
+<section id="livre">
+  <div class="livre-inner">
+    <div class="livre-visuel">
+      <div class="book-mockup">
+        <div class="book-cover">
+          <div class="book-deco">🌸</div>
+          <div class="book-title">Bouquet de psychoses</div>
+          <div class="book-author">Cassandre CM</div>
+        </div>
+        <div class="livre-badge">
+          <strong>25$</strong>
+          livraison incluse
+        </div>
+      </div>
+    </div>
+    <div class="livre-content">
+      <span class="livre-eyebrow">Prévente — À paraître</span>
+      <h2>Bouquet de<br/><em>psychoses</em></h2>
+      <p class="livre-desc">Ce livre s'adresse à tout le monde — ceux qui traversent des épreuves, leurs proches, ceux qui veulent comprendre et ceux qui veulent agir. Il offre une vision nouvelle de la santé mentale, fondée sur l'authenticité, la vérité, la solidarité et l'espoir.</p>
+      <p class="livre-desc">En refermant ce livre, vous aurez voyagé au cœur de la psychose, mais aussi au cœur de l'humain. Un appel à l'ouverture d'esprit et à tout ce qui fait de nous des humains.</p>
+      <div class="livre-details">
+        <div class="livre-detail"><span class="dot"></span>25 $ — frais de livraison inclus</div>
+        <div class="livre-detail"><span class="dot"></span>1 $ par livre vendu remis à la Fondation Douglas</div>
+      </div>
+      <div class="livre-actions">
+        <a href="#contact-conf" class="btn btn-blanc">Précommander mon exemplaire</a>
+        <span class="livre-dispo">Lien de paiement disponible bientôt</span>
       </div>
     </div>
   </div>
