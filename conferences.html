@@ -65,7 +65,35 @@
       transition: background .2s;
     }
     .nav-links .btn-nav:hover { background: var(--rouge); }
-    @media (max-width: 768px) { .nav-links { display: none; } }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--noir); border-radius: 2px;
+      transition: all .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(237,236,231,.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--creme-dk);
+        padding: 12px 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 14px 32px; font-size: 15px;
+        border-bottom: 1px solid var(--creme-dk);
+      }
+      .nav-links a:last-child { border-bottom: none; margin: 12px 32px 4px; }
+      .hamburger { display: flex; }
+    }
 
     /* ── BUTTONS ── */
     .btn {
@@ -409,11 +437,14 @@
     <a class="nav-logo" href="index.html">
       <img src="logo.png" alt="Cassandre CM" />
     </a>
-    <div class="nav-links">
-      <a href="index.html">Stratégie marketing</a>
-      <a href="#sujets">Mes conférences</a>
-      <a href="#presse">Revue de presse</a>
-      <a href="#contact-conf" class="btn-nav">Me contacter</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="nav-close">Stratégie marketing</a>
+      <a href="#sujets" class="nav-close">Mes conférences</a>
+      <a href="#presse" class="nav-close">Revue de presse</a>
+      <a href="#contact-conf" class="btn-nav nav-close">Me contacter</a>
     </div>
   </div>
 </nav>
@@ -619,6 +650,20 @@
         while (temp.firstChild) textNode.parentNode.insertBefore(temp.firstChild, textNode);
         textNode.parentNode.removeChild(textNode);
       }
+    });
+  });
+</script>
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-close').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
     });
   });
 </script>
