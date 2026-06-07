@@ -116,21 +116,49 @@
 
     /* ── HISTOIRE ── */
     #histoire {
-      max-width: 820px; margin: 0 auto;
       padding: 100px 32px;
+      max-width: 1200px; margin: 0 auto;
     }
-    #histoire h2 {
+    .histoire-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .histoire-photo {
+      position: relative;
+    }
+    .histoire-photo img {
+      width: 100%; height: 620px;
+      object-fit: cover; object-position: top;
+      border-radius: 16px;
+      display: block;
+    }
+    .histoire-content h2 {
       font-family: 'The Seasons', serif;
-      font-size: clamp(30px, 4vw, 48px);
-      font-weight: normal; margin-bottom: 36px;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: normal; margin-bottom: 32px;
       line-height: 1.2;
     }
-    #histoire h2 em { font-style: normal; color: var(--rouge); }
+    .histoire-content h2 em { font-style: normal; color: var(--rouge); }
+    .histoire-pullquote {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(22px, 2.5vw, 32px);
+      color: var(--rouge);
+      line-height: 1.3;
+      border-left: 3px solid var(--rouge);
+      padding-left: 24px;
+      margin-bottom: 32px;
+    }
     .histoire-text p {
-      font-size: 17px; color: var(--gris);
-      line-height: 1.85; margin-bottom: 20px;
+      font-size: 16px; color: var(--gris);
+      line-height: 1.85; margin-bottom: 16px;
     }
     .histoire-text p:last-child { margin-bottom: 0; }
+    @media (max-width: 900px) {
+      .histoire-grid { grid-template-columns: 1fr; gap: 48px; }
+      .histoire-photo img { height: 420px; }
+    }
 
     /* ── CONFÉRENCES CARDS ── */
     #sujets {
@@ -315,14 +343,19 @@
 
 <!-- ── HISTOIRE ── -->
 <section id="histoire">
-  <h2>Mon histoire, <em>ma force.</em></h2>
-  <div class="histoire-text">
-    <p>Si je vous disais que j'ai déjà goûté à la folie, que j'étais sans domicile fixe et sans emploi. Est-ce que vous me croiriez ?</p>
-    <p>Je me prénomme Cassandre CM, je suis une jeune maman de jumeaux dans le début de ma trentaine. J'ai la chance de mener une très belle vie et d'être heureuse, mais je n'en suis pas arrivée là sans effort. Je vous raconte brièvement mon histoire des dernières années…</p>
-    <p>En terminant mes études en 2017, je me lance dans le marketing numérique et l'événementiel. Mon chemin se trace doucement et j'entame ma carrière. En 2019, une grande épreuve me force à tout arrêter. En juin de cette année-là, le contact avec la réalité se rompt lors d'une crise psychotique et je perds tous mes repères (domicile, relation amoureuse et travail). Je suis forcée de séjourner une partie de l'été dans une aile psychiatrique où l'on tente de me stabiliser.</p>
-    <p>Ma plus grande peur devient réalité. Depuis l'enfance, j'ai une peur qui m'habite, celle de devenir « folle ». Les traitements ne fonctionnent pas et cette période de noirceur finit par m'envoyer une image négative de moi-même. Face à l'impuissance, je plonge dans une détresse qui me conduit à vouloir m'enlever la vie. Mon père envoie les policiers à mon domicile et j'entre d'urgence à nouveau à l'hôpital psychiatrique. Avec l'aide de mes proches, un changement de médication et un soupçon de chance, je réussis enfin à sortir ma tête de l'eau.</p>
-    <p>Armée de résilience, je retrouve une stabilité après plusieurs mois. Mais j'ai une vie à reconstruire, je suis sans domicile et sans emploi. Il m'aura fallu plusieurs années de travail, d'objectifs et de bons choix pour me sortir de cette impasse — et j'ai tellement de choses à vous partager.</p>
-    <p>Maintenant rétablie et coexistant avec la maladie bipolaire, je souhaite aider les gens à se libérer de la stigmatisation et à mieux comprendre les enjeux de santé mentale. Je souhaite être celle que j'aurais aimé rencontrer lorsque j'entamais mon rétablissement : celle qui prouve que même avec un trouble grave de santé mentale, il est possible de mener une vie équilibrée et épanouissante.</p>
+  <div class="histoire-grid">
+    <div class="histoire-photo">
+      <img src="photo-conf.png" alt="Cassandre CM, conférencière en santé mentale" />
+    </div>
+    <div class="histoire-content">
+      <h2>Mon histoire, <em>ma force.</em></h2>
+      <p class="histoire-pullquote">Si je vous disais que j'ai déjà goûté à la folie, que j'étais sans domicile fixe et sans emploi. Est-ce que vous me croiriez ?</p>
+      <div class="histoire-text">
+        <p>Je me prénomme Cassandre CM, je suis une jeune maman de jumeaux dans le début de ma trentaine. J'ai la chance de mener une très belle vie et d'être heureuse, mais je n'en suis pas arrivée là sans effort.</p>
+        <p>En 2019, le contact avec la réalité se rompt lors d'une crise psychotique et je perds tous mes repères — domicile, relation amoureuse et travail. Je séjourne dans une aile psychiatrique où les traitements ne fonctionnent pas, et cette noirceur me conduit à vouloir m'enlever la vie. Avec l'aide de mes proches, un changement de médication et un soupçon de chance, je réussis enfin à sortir ma tête de l'eau.</p>
+        <p>Armée de résilience, je retrouve une stabilité après plusieurs mois. Maintenant rétablie et coexistant avec la maladie bipolaire, je souhaite aider les gens à se libérer de la stigmatisation. Je veux être celle que j'aurais aimé rencontrer lors de mon rétablissement : celle qui prouve que même avec un trouble grave de santé mentale, il est possible de mener une vie équilibrée et épanouissante.</p>
+      </div>
+    </div>
   </div>
 </section>
 
