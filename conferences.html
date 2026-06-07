@@ -709,12 +709,12 @@
 </script>
 
 <!-- Curseur personnalisé -->
-<div id="custom-cursor"><img src="logo.png" alt="" aria-hidden="true" /></div>
+<div id="custom-cursor"><img src="curseur-fleur.png" alt="" aria-hidden="true" /></div>
 <style>
   body { cursor: none; }
   a, button, [role="button"] { cursor: none; }
   #custom-cursor { position: fixed; top: 0; left: 0; width: 38px; height: 38px; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: transform .12s ease, opacity .2s; opacity: 0; }
-  #custom-cursor img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) saturate(100%) invert(13%) sepia(68%) saturate(3000%) hue-rotate(345deg) brightness(80%); }
+  #custom-cursor img { width: 100%; height: 100%; object-fit: contain;  }
   #custom-cursor.is-hovering { transform: translate(-50%,-50%) scale(1.25); }
   @media (hover: none) { #custom-cursor { display: none; } body { cursor: auto; } }
 </style>
