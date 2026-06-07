@@ -808,5 +808,50 @@
     });
   });
 </script>
+
+<!-- Curseur personnalisé -->
+<div id="custom-cursor">
+  <img src="logo.png" alt="" aria-hidden="true" />
+</div>
+<style>
+  body { cursor: none; }
+  a, button, [role="button"], label, input, select, textarea { cursor: none; }
+  #custom-cursor {
+    position: fixed;
+    top: 0; left: 0;
+    width: 38px; height: 38px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform .12s ease, opacity .2s;
+    opacity: 0;
+  }
+  #custom-cursor img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) saturate(100%) invert(13%) sepia(68%) saturate(3000%) hue-rotate(345deg) brightness(80%); }
+  #custom-cursor.is-hovering { transform: translate(-50%, -50%) scale(1.25); }
+  @media (hover: none) { #custom-cursor { display: none; } body { cursor: auto; } }
+</style>
+<script>
+  (function() {
+    var cursor = document.getElementById('custom-cursor');
+    var mouseX = 0, mouseY = 0, curX = 0, curY = 0, raf;
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursor.style.opacity = '1';
+      if (!raf) raf = requestAnimationFrame(loop);
+    });
+    document.addEventListener('mouseleave', function() { cursor.style.opacity = '0'; });
+    function loop() {
+      curX += (mouseX - curX) * 0.18;
+      curY += (mouseY - curY) * 0.18;
+      cursor.style.left = curX + 'px';
+      cursor.style.top = curY + 'px';
+      raf = requestAnimationFrame(loop);
+    }
+    document.querySelectorAll('a, button, [role="button"]').forEach(function(el) {
+      el.addEventListener('mouseenter', function() { cursor.classList.add('is-hovering'); });
+      el.addEventListener('mouseleave', function() { cursor.classList.remove('is-hovering'); });
+    });
+  })();
+</script>
 </body>
 </html>
