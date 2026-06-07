@@ -548,7 +548,7 @@
 <!-- ════════════ INTRO STRIP ════════════ -->
 <div id="intro">
   <p class="intro-text">
-    Pas de formules toutes faites. Chaque mandat est conçu <em>sur mesure</em>, avec une vision claire et un plan d<span style="font-family:'DM Sans',sans-serif">'</span>action concret.
+    Pas de formules toutes faites. Chaque mandat est conçu <em>sur mesure</em>, avec une vision claire et un plan d'action concret.
   </p>
   <div class="intro-cta">
     <a href="#services">Découvrir mes services →</a>
@@ -745,8 +745,20 @@
 </footer>
 
 <script>
-  document.querySelectorAll('h1, h2, h3, .intro-text').forEach(el => {
-    el.innerHTML = el.innerHTML.replace(/['''ʼ]/g, '<span style="font-family:\'DM Sans\',sans-serif">$&</span>');
+  // Remplace les apostrophes par DM Sans dans les nœuds texte seulement (pas dans les attributs HTML)
+  document.querySelectorAll('h1, h2, h3, .intro-text').forEach(function(el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    nodes.forEach(function(textNode) {
+      if (/['''ʼ]/.test(textNode.textContent)) {
+        var temp = document.createElement('span');
+        temp.innerHTML = textNode.textContent.replace(/['''ʼ]/g, '<span style="font-family:\'DM Sans\',sans-serif">$&</span>');
+        while (temp.firstChild) textNode.parentNode.insertBefore(temp.firstChild, textNode);
+        textNode.parentNode.removeChild(textNode);
+      }
+    });
   });
 </script>
 </body>
