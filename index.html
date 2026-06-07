@@ -546,7 +546,7 @@
 <!-- ════════════ INTRO STRIP ════════════ -->
 <div id="intro">
   <p class="intro-text">
-    Pas de formules toutes faites. Chaque mandat est conçu <em>sur mesure</em>, avec une vision claire et un plan d'action concret.
+    Pas de formules toutes faites. Chaque mandat est conçu <em>sur mesure</em>, avec une vision claire et un plan d<span style="font-family:'DM Sans',sans-serif">'</span>action concret.
   </p>
   <div class="intro-cta">
     <a href="#services">Découvrir mes services →</a>
@@ -743,7 +743,7 @@
 </footer>
 
 <script>
-  document.querySelectorAll('h1, h2, h3').forEach(el => {
+  document.querySelectorAll('h1, h2, h3, .intro-text').forEach(el => {
     el.innerHTML = el.innerHTML.replace(/['''ʼ]/g, '<span style="font-family:\'DM Sans\',sans-serif">$&</span>');
   });
 </script>
