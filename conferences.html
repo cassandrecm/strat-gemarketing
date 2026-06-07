@@ -6,7 +6,47 @@
   <title>Conférences en santé mentale — Cassandre CM</title>
   <meta name="description" content="Cassandre Clermont-Moquin, conférencière en santé mentale. Conférences sur mesure pour écoles et entreprises : bipolarité, rétablissement, leadership humain, parentalité." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.cassandrecm.com/conferences" />
+  <link rel="canonical" href="https://www.cassandrecm.com/conferences.html" />
+
+  <!-- ── Schema.org ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.cassandrecm.com/#cassandre",
+        "name": "Cassandre Clermont-Moquin",
+        "jobTitle": "Conférencière en santé mentale",
+        "url": "https://www.cassandrecm.com/conferences.html",
+        "image": "https://www.cassandrecm.com/photo-opt.jpg",
+        "sameAs": ["https://www.linkedin.com/in/cassandre-clermont-moquin-bb9820114/"],
+        "knowsAbout": ["Santé mentale", "Bipolarité", "Rétablissement psychotique", "Leadership humain", "Parentalité et santé mentale"]
+      },
+      {
+        "@type": "Book",
+        "name": "Bouquet de psychoses",
+        "author": {"@id": "https://www.cassandrecm.com/#cassandre"},
+        "inLanguage": "fr",
+        "offers": {
+          "@type": "Offer",
+          "price": "25.00",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/PreOrder",
+          "url": "https://buy.stripe.com/7sY8wOfJ75gBe8r5Pi8g000"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "Conférences en santé mentale — Cassandre CM",
+        "description": "Conférences sur mesure sur la santé mentale pour écoles et entreprises au Québec. Sujets : bipolarité, rétablissement, leadership humain, parentalité.",
+        "organizer": {"@id": "https://www.cassandrecm.com/#cassandre"},
+        "location": {"@type": "VirtualLocation", "url": "https://www.cassandrecm.com/conferences.html"},
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -463,7 +503,7 @@
 <section id="histoire">
   <div class="histoire-grid">
     <div class="histoire-photo">
-      <img src="photo.jpg" alt="Cassandre CM, conférencière en santé mentale" />
+      <img src="photo-opt.jpg" alt="Cassandre CM, conférencière en santé mentale" />
     </div>
     <div class="histoire-content">
       <h2>Mon histoire, <em>ma force.</em></h2>
@@ -483,7 +523,7 @@
     <div class="livre-visuel">
       <div class="book-mockup">
         <div class="book-cover">
-          <img src="livre-cover.png" alt="Bouquet de psychoses — Cassandre CM" />
+          <img src="livre-cover.jpg" alt="Bouquet de psychoses — Cassandre CM" />
         </div>
       </div>
     </div>
