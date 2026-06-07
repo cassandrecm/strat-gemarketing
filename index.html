@@ -14,7 +14,7 @@
       font-weight: normal;
       font-style: normal;
     }
-    /* ── Reset & base ── */
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --rouge:    #B81C1C;
@@ -24,49 +24,17 @@
       --creme-dk: #E0DED8;
       --blanc:    #F7F6F2;
       --gris:     #6B6B68;
-      --radius:   16px;
     }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--creme);
+      background: var(--blanc);
       color: var(--noir);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Utilitaires ── */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-    .tag {
-      display: inline-block;
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--rouge);
-      border: 1.5px solid var(--rouge);
-      border-radius: 100px;
-      padding: 5px 14px;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600; font-size: 15px;
-      padding: 14px 28px;
-      border-radius: 100px;
-      cursor: pointer; border: none;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-    .btn-primary { background: var(--rouge); color: #fff; }
-    .btn-primary:hover { background: var(--rouge-dk); }
-    .btn-outline { background: transparent; color: var(--noir); border: 2px solid var(--noir); }
-    .btn-outline:hover { background: var(--noir); color: var(--creme); }
-    .btn-light { background: var(--creme); color: var(--noir); }
-
-    /* ── Nav ── */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(237,236,231,.92);
@@ -75,35 +43,18 @@
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      height: 68px;
+      height: 68px; max-width: 1200px; margin: 0 auto; padding: 0 32px;
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
-    .nav-logo-mark {
-      width: 36px; height: 36px;
-      background: var(--rouge);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .nav-logo-mark svg { width: 20px; height: 20px; }
-    .nav-logo-text {
-      font-weight: 700; font-size: 17px; color: var(--noir); letter-spacing: -.02em;
-    }
+    .nav-logo img { height: 40px; width: auto; }
     .nav-links { display: flex; align-items: center; gap: 36px; }
     .nav-links a {
       text-decoration: none; color: var(--gris);
-      font-size: 14px; font-weight: 500;
-      transition: color .2s;
+      font-size: 14px; font-weight: 500; transition: color .2s;
     }
     .nav-links a:hover { color: var(--noir); }
-    .nav-cta { margin-left: 8px; }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-    }
+    @media (max-width: 768px) { .nav-links { display: none; } }
 
-    /* ── Hero ── */
+    /* ── HERO split ── */
     #hero {
       padding-top: 68px;
       min-height: 100vh;
@@ -135,296 +86,302 @@
       max-width: 440px; margin-bottom: 40px;
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-stats {
-      margin-top: 64px;
-      display: flex; gap: 40px;
-      padding-top: 40px;
-      border-top: 1px solid var(--creme-dk);
-    }
-    .stat-num {
-      font-size: 32px; font-weight: 700; letter-spacing: -.02em;
-      color: var(--rouge);
-    }
-    .stat-label { font-size: 13px; color: var(--gris); margin-top: 2px; }
-
     .hero-right {
       background: var(--creme-dk);
       position: relative; overflow: hidden;
     }
-    .hero-photo-placeholder {
-      width: 100%; height: 100%; min-height: 600px;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 12px;
-      background: linear-gradient(135deg, #D6D4CE 0%, #C8C6BF 100%);
-      color: var(--gris);
-    }
-    .hero-photo-placeholder svg { width: 56px; height: 56px; opacity: .4; }
-    .hero-photo-placeholder span { font-size: 13px; font-family: 'Space Mono', monospace; opacity: .6; }
     .hero-badge {
       position: absolute; bottom: 32px; left: 32px;
-      background: var(--rouge);
-      color: #fff; border-radius: var(--radius);
-      padding: 16px 20px;
-      font-size: 13px; font-weight: 600;
+      background: var(--rouge); color: #fff; border-radius: 16px;
+      padding: 16px 20px; font-size: 13px; font-weight: 600;
       max-width: 200px; line-height: 1.4;
     }
     .hero-badge strong { display: block; font-size: 16px; margin-bottom: 2px; }
 
-    /* ── Logos partenaires ── */
-    #partenaires {
+    /* ── Boutons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600; font-size: 14px;
+      padding: 14px 30px; border-radius: 100px;
+      cursor: pointer; border: none; text-decoration: none;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    .btn-primary { background: var(--rouge); color: #fff; }
+    .btn-primary:hover { background: var(--rouge-dk); }
+    .btn-outline { background: transparent; color: var(--noir); border: 2px solid var(--noir); }
+    .btn-outline:hover { background: var(--noir); color: var(--creme); }
+    .btn-dark { background: var(--noir); color: #fff; }
+    .btn-light { background: var(--creme); color: var(--noir); }
+
+    /* ── INTRO STRIP ── */
+    #intro {
+      background: var(--noir);
+      padding: 48px 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 48px;
+      flex-wrap: wrap;
+    }
+    .intro-text {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: normal; color: var(--creme);
+      letter-spacing: -.01em; line-height: 1.3;
+      max-width: 700px;
+    }
+    .intro-text em { color: var(--rouge); font-style: normal; }
+    .intro-cta a {
+      color: rgba(237,236,231,.5);
+      font-size: 13px; text-decoration: none;
+      letter-spacing: .06em; text-transform: uppercase;
+      font-family: 'Space Mono', monospace;
+      transition: color .2s;
+    }
+    .intro-cta a:hover { color: var(--creme); }
+
+    /* ── SERVICES ── */
+    #services { padding: 120px 64px; background: var(--blanc); }
+    .services-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--rouge); margin-bottom: 64px;
+    }
+    .services-list { display: flex; flex-direction: column; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr auto;
+      align-items: start;
+      gap: 40px;
       padding: 40px 0;
       border-top: 1px solid var(--creme-dk);
-      border-bottom: 1px solid var(--creme-dk);
-      overflow: hidden;
+      transition: background .2s;
     }
-    .partenaires-label {
+    .service-row:last-child { border-bottom: 1px solid var(--creme-dk); }
+    .service-num {
       font-family: 'Space Mono', monospace;
-      font-size: 11px; text-transform: uppercase; letter-spacing: .12em;
-      color: var(--gris); text-align: center; margin-bottom: 24px;
+      font-size: 12px; color: var(--rouge); letter-spacing: .1em;
+      padding-top: 6px;
     }
-    .partenaires-track {
-      display: flex; gap: 48px; align-items: center;
-      justify-content: center; flex-wrap: wrap;
-    }
-    .partenaire-pill {
-      background: var(--creme-dk); border-radius: 100px;
-      padding: 10px 24px;
-      font-size: 13px; font-weight: 600; letter-spacing: -.01em;
-      color: var(--gris); white-space: nowrap;
-    }
-
-    /* ── Section commune ── */
-    section { padding: 100px 0; }
-    .section-header { margin-bottom: 64px; }
-    .section-header h2 {
+    .service-row h3 {
       font-family: 'The Seasons', serif;
-      font-size: clamp(36px, 4vw, 56px);
-      font-weight: normal; letter-spacing: -.01em; line-height: 1.1;
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: normal; letter-spacing: -.01em;
     }
-    .section-header h2 em { font-style: normal; color: var(--rouge); }
-    .section-header p {
-      font-size: 17px; color: var(--gris); max-width: 560px;
-      margin-top: 20px; line-height: 1.65;
+    .service-row p { font-size: 15px; color: var(--gris); line-height: 1.7; }
+    .service-row .service-arrow {
+      font-size: 20px; color: var(--rouge);
+      transition: transform .2s;
+      padding-top: 4px;
     }
+    .service-row:hover .service-arrow { transform: translateX(6px); }
 
-    /* ── Services ── */
-    #services { background: var(--blanc); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-    .service-card {
-      background: var(--creme);
-      border-radius: var(--radius);
-      padding: 36px 32px;
-      transition: transform .25s, box-shadow .25s;
-      border: 1.5px solid transparent;
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,.08);
-      border-color: var(--rouge);
-    }
-    .service-icon {
-      width: 48px; height: 48px;
-      background: var(--rouge);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 24px;
-    }
-    .service-icon svg { width: 24px; height: 24px; color: #fff; }
-    .service-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 12px; }
-    .service-card p { font-size: 15px; color: var(--gris); line-height: 1.65; }
-    .service-card .service-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 20px; font-size: 14px; font-weight: 600;
-      color: var(--rouge); text-decoration: none;
-    }
-    .service-card .service-link:hover { gap: 10px; }
-
-    /* ── À propos ── */
+    /* ── À PROPOS ── */
     #apropos {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      padding: 100px 0;
+      min-height: 80vh;
     }
-    #apropos.container { padding-left: 32px; padding-right: 32px; }
-    .apropos-photo {
-      border-radius: 24px; overflow: hidden;
-      aspect-ratio: 4/5;
-      background: linear-gradient(160deg, #D6D4CE 0%, #BEBCB5 100%);
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 12px; color: var(--gris);
-      position: relative;
+    .apropos-img {
+      position: relative; overflow: hidden;
     }
-    .apropos-photo svg { width: 48px; height: 48px; opacity: .4; }
-    .apropos-photo span { font-size: 13px; font-family: 'Space Mono', monospace; opacity: .6; }
+    .apropos-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
     .apropos-badge-red {
-      position: absolute; top: 24px; right: 24px;
+      position: absolute; top: 40px; right: 40px;
       width: 96px; height: 96px;
-      background: var(--rouge);
-      border-radius: 50%;
+      background: var(--rouge); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      color: #fff; font-size: 11px; font-weight: 700;
-      line-height: 1.3; padding: 12px;
+      text-align: center; color: #fff;
+      font-size: 11px; font-weight: 700; line-height: 1.3; padding: 12px;
+    }
+    .apropos-content {
+      background: var(--creme);
+      padding: 100px 80px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--rouge); border: 1.5px solid var(--rouge);
+      border-radius: 100px; padding: 5px 14px; margin-bottom: 28px;
     }
     .apropos-content h2 {
       font-family: 'The Seasons', serif;
-      font-size: clamp(32px, 3.5vw, 48px);
+      font-size: clamp(36px, 3.5vw, 56px);
       font-weight: normal; letter-spacing: -.01em; line-height: 1.1;
       margin-bottom: 28px;
     }
     .apropos-content h2 em { font-style: normal; color: var(--rouge); }
     .apropos-content p {
-      font-size: 16px; color: var(--gris); line-height: 1.75;
-      margin-bottom: 18px;
+      font-size: 16px; color: var(--gris); line-height: 1.8;
+      margin-bottom: 18px; max-width: 480px;
     }
-    .apropos-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 36px; }
+    .apropos-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 40px; }
     .chip {
-      background: var(--creme-dk);
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 13px; font-weight: 600;
+      background: var(--creme-dk); border-radius: 100px;
+      padding: 6px 16px; font-size: 13px; font-weight: 600;
     }
 
-    /* ── Process ── */
-    #process { background: var(--noir); color: var(--creme); }
-    #process .section-header h2 { color: var(--creme); }
-    #process .section-header h2 em { color: var(--rouge); }
-    #process .section-header p { color: rgba(237,236,231,.6); }
-    .process-steps {
+    /* ── PROCESS ── */
+    #process { background: var(--noir); padding: 120px 64px; }
+    .process-header { margin-bottom: 80px; }
+    .process-header h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: normal; color: var(--creme);
+      letter-spacing: -.02em; line-height: 1.05;
+    }
+    .process-header h2 em { color: var(--rouge); font-style: normal; }
+    .process-header p { font-size: 16px; color: rgba(237,236,231,.5); margin-top: 20px; max-width: 480px; line-height: 1.7; }
+    .process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.06);
     }
     .process-step {
-      background: rgba(255,255,255,.04);
-      padding: 40px 32px;
+      background: var(--noir);
+      padding: 48px 36px;
       transition: background .2s;
     }
-    .process-step:hover { background: rgba(255,255,255,.08); }
-    .step-num {
-      font-family: 'Space Mono', monospace;
-      font-size: 12px; color: var(--rouge);
-      letter-spacing: .1em; margin-bottom: 24px;
-    }
-    .process-step h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
-    .process-step p { font-size: 14px; color: rgba(237,236,231,.55); line-height: 1.65; }
+    .process-step:hover { background: rgba(255,255,255,.04); }
+    .step-num { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--rouge); letter-spacing: .1em; margin-bottom: 28px; }
+    .process-step h3 { font-size: 18px; font-weight: 700; color: var(--creme); margin-bottom: 14px; }
+    .process-step p { font-size: 14px; color: rgba(237,236,231,.45); line-height: 1.7; }
 
-    /* ── Témoignages ── */
-    #temoignages { background: var(--blanc); }
+    /* ── TÉMOIGNAGES ── */
+    #temoignages { padding: 120px 64px; background: var(--blanc); }
+    .temoignages-header { margin-bottom: 80px; }
+    .temoignages-header h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: normal; letter-spacing: -.02em; line-height: 1.05;
+    }
+    .temoignages-header h2 em { color: var(--rouge); font-style: normal; }
     .temoignages-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+      gap: 2px;
+      background: var(--creme-dk);
     }
     .temoignage-card {
-      background: var(--creme);
-      border-radius: var(--radius);
-      padding: 36px;
+      background: var(--blanc);
+      padding: 48px 40px;
     }
-    .stars { color: var(--rouge); font-size: 18px; margin-bottom: 20px; letter-spacing: 2px; }
+    .stars { color: var(--rouge); font-size: 16px; letter-spacing: 2px; margin-bottom: 24px; }
     .temoignage-card blockquote {
-      font-size: 16px; line-height: 1.75; color: var(--noir);
-      font-style: italic; margin-bottom: 28px;
+      font-size: 16px; line-height: 1.8; color: var(--noir);
+      font-style: italic; margin-bottom: 32px;
     }
     .temoignage-author { display: flex; align-items: center; gap: 14px; }
     .author-avatar {
       width: 44px; height: 44px; border-radius: 50%;
-      background: linear-gradient(135deg, #D6D4CE, #BEBCB5);
+      background: var(--creme-dk);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 14px; color: var(--gris); flex-shrink: 0;
+      font-weight: 700; font-size: 13px; color: var(--gris); flex-shrink: 0;
     }
     .author-name { font-weight: 700; font-size: 14px; }
     .author-role { font-size: 13px; color: var(--gris); }
 
+    /* ── CONFÉRENCES ── */
+    #conferences {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+    .conferences-content {
+      background: var(--creme);
+      padding: 100px 80px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .conferences-content h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(32px, 3vw, 48px);
+      font-weight: normal; letter-spacing: -.01em; line-height: 1.1;
+      margin-bottom: 28px;
+    }
+    .conferences-content h2 em { color: var(--rouge); font-style: normal; }
+    .conferences-content p { font-size: 16px; color: var(--gris); line-height: 1.8; margin-bottom: 18px; max-width: 460px; }
+    .conferences-right {
+      background: var(--noir);
+      padding: 100px 80px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .conferences-right ul { list-style: none; display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+    .conferences-right li { display: flex; align-items: flex-start; gap: 16px; }
+    .conf-dot { width: 8px; height: 8px; background: var(--rouge); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+    .conferences-right li span { font-size: 16px; color: rgba(237,236,231,.8); line-height: 1.6; }
+
     /* ── CTA ── */
     #cta {
       background: var(--rouge);
-      padding: 100px 0;
+      padding: 140px 64px;
       text-align: center;
     }
     #cta h2 {
       font-family: 'The Seasons', serif;
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: normal; letter-spacing: -.01em; line-height: 1.1;
-      color: #fff; margin-bottom: 20px;
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: normal; letter-spacing: -.02em; line-height: 1.05;
+      color: #fff; margin-bottom: 24px;
     }
-    #cta p { font-size: 18px; color: rgba(255,255,255,.75); max-width: 520px; margin: 0 auto 44px; }
-    #cta .btn-light:hover { background: var(--noir); color: #fff; }
+    #cta p { font-size: 18px; color: rgba(255,255,255,.75); max-width: 480px; margin: 0 auto 48px; line-height: 1.7; }
 
-    /* ── Footer ── */
-    footer {
-      background: var(--noir); color: var(--creme);
-      padding: 72px 0 40px;
-    }
+    /* ── FOOTER ── */
+    footer { background: var(--noir); color: var(--creme); padding: 80px 64px 40px; }
     .footer-top {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 48px;
       padding-bottom: 56px;
-      border-bottom: 1px solid rgba(237,236,231,.1);
+      border-bottom: 1px solid rgba(237,236,231,.08);
       margin-bottom: 40px;
     }
-    .footer-brand p {
-      font-size: 14px; color: rgba(237,236,231,.5);
-      margin-top: 16px; max-width: 260px; line-height: 1.65;
-    }
-    .footer-logo {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 4px;
-    }
-    .footer-logo-mark {
-      width: 32px; height: 32px; background: var(--rouge);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .footer-logo-text { font-weight: 700; font-size: 16px; }
-    .footer-col h4 {
-      font-size: 13px; font-weight: 700; letter-spacing: .06em;
-      text-transform: uppercase; color: rgba(237,236,231,.4);
-      margin-bottom: 20px;
-    }
-    .footer-col a {
-      display: block; text-decoration: none;
-      color: rgba(237,236,231,.7); font-size: 14px;
-      margin-bottom: 12px; transition: color .2s;
-    }
+    .footer-brand p { font-size: 14px; color: rgba(237,236,231,.45); margin-top: 16px; max-width: 260px; line-height: 1.7; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(237,236,231,.3); margin-bottom: 20px; }
+    .footer-col a { display: block; text-decoration: none; color: rgba(237,236,231,.6); font-size: 14px; margin-bottom: 12px; transition: color .2s; }
     .footer-col a:hover { color: var(--creme); }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 16px;
-    }
-    .footer-bottom p { font-size: 13px; color: rgba(237,236,231,.35); }
-    .footer-bottom a { color: rgba(237,236,231,.35); text-decoration: none; transition: color .2s; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-bottom p { font-size: 12px; color: rgba(237,236,231,.25); }
+    .footer-bottom a { color: rgba(237,236,231,.25); text-decoration: none; transition: color .2s; }
     .footer-bottom a:hover { color: var(--creme); }
 
-    /* ── Responsive ── */
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .service-row { grid-template-columns: 60px 1fr 1fr; }
+      .service-row .service-arrow { display: none; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 900px) {
       #hero { grid-template-columns: 1fr; }
       .hero-right { min-height: 380px; }
       .hero-left { padding: 60px 32px; max-width: 100%; }
-      #apropos { grid-template-columns: 1fr; gap: 48px; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-      #conferences .container { grid-template-columns: 1fr; gap: 48px; }
+      #apropos, #conferences { grid-template-columns: 1fr; }
     }
-    @media (max-width: 600px) {
-      .container { padding: 0 20px; }
-      .hero-left { padding: 48px 20px; }
-      .hero-stats { gap: 24px; }
+    @media (max-width: 768px) {
+      #intro { padding: 40px 32px; }
+      #services, #process, #temoignages { padding: 80px 32px; }
+      .apropos-content, .conferences-content, .conferences-right { padding: 60px 32px; }
+      .service-row { grid-template-columns: 1fr; gap: 12px; }
+      .service-num { display: none; }
+      .process-grid { grid-template-columns: 1fr; }
+      footer { padding: 60px 32px 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      #cta { padding: 100px 32px; }
+    }
+    @media (max-width: 480px) {
       .footer-top { grid-template-columns: 1fr; }
-      #hero { padding-top: 68px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ════════════════ NAV ════════════════ -->
+<!-- ════════════ NAV ════════════ -->
 <nav>
-  <div class="container nav-inner">
+  <div class="nav-inner">
     <a href="#" class="nav-logo">
       <img src="logo.png" alt="Cassandre CM" style="height:40px;width:auto;" />
     </a>
@@ -433,14 +390,14 @@
       <a href="#apropos">À propos</a>
       <a href="#process">Approche</a>
       <a href="#temoignages">Témoignages</a>
-      <a href="#cta" class="btn btn-primary nav-cta" style="padding:10px 22px;font-size:14px;color:#fff;">Discutons</a>
+      <a href="#cta" class="btn btn-primary" style="padding:10px 22px;font-size:14px;color:#fff;">Discutons</a>
     </div>
   </div>
 </nav>
 
-<!-- ════════════════ HERO ════════════════ -->
+<!-- ════════════ HERO ════════════ -->
 <section id="hero">
-  <div class="hero-left container">
+  <div class="hero-left">
     <p class="hero-eyebrow">Saint-Basile-le-Grand, Québec</p>
     <h1 class="hero-h1">
       Stratégie.<br/>
@@ -464,257 +421,208 @@
   </div>
 </section>
 
+<!-- ════════════ INTRO STRIP ════════════ -->
+<div id="intro">
+  <p class="intro-text">
+    Pas de formules toutes faites. Chaque mandat est conçu <em>sur mesure</em>, avec une vision claire et un plan d'action concret.
+  </p>
+  <div class="intro-cta">
+    <a href="#services">Découvrir mes services →</a>
+  </div>
+</div>
 
-<!-- ════════════════ SERVICES ════════════════ -->
+<!-- ════════════ SERVICES ════════════ -->
 <section id="services">
-  <div class="container">
-    <div class="section-header">
-      <span class="tag">Ce que je fais</span>
-      <h2>Des services pensés<br/>pour <em>votre réalité</em></h2>
-      <p>Pas de formules toutes faites. Chaque mandat est conçu sur mesure, avec une vision claire et un plan d'action concret.</p>
+  <p class="services-label">Ce que je fais</p>
+  <div class="services-list">
+
+    <div class="service-row">
+      <span class="service-num">01</span>
+      <h3>Stratégie marketing</h3>
+      <p>Positionnement de marque, stratégie de contenu ou mise en oeuvre d'un plan stratégique annuel aligné sur vos objectifs d'affaires.</p>
+      <span class="service-arrow">→</span>
     </div>
-    <div class="services-grid">
 
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
-          </svg>
-        </div>
-        <h3>Stratégie marketing</h3>
-        <p>Positionnement de marque, stratégie de contenu ou mise en oeuvre d'un plan stratégique annuel aligné sur vos objectifs d'affaires.</p>
-        <a href="#cta" class="service-link">En savoir plus →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-            <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-          </svg>
-        </div>
-        <h3>Gestion de projet</h3>
-        <p>Gestion de projet comme un rebranding ou une refonte de site web. Je m'occupe de la planification à la livraison, dans les délais et le budget.</p>
-        <a href="#cta" class="service-link">En savoir plus →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-          </svg>
-        </div>
-        <h3>Publicité numérique</h3>
-        <p>Création et optimisation de campagnes Meta Ads : ciblage précis, concepts créatifs percutants et suivi de performance en continu.</p>
-        <a href="#cta" class="service-link">En savoir plus →</a>
-      </div>
-
-
+    <div class="service-row">
+      <span class="service-num">02</span>
+      <h3>Gestion de projet</h3>
+      <p>Gestion de projet comme un rebranding ou une refonte de site web. Je m'occupe de la planification à la livraison, dans les délais et le budget.</p>
+      <span class="service-arrow">→</span>
     </div>
+
+    <div class="service-row">
+      <span class="service-num">03</span>
+      <h3>Publicité numérique</h3>
+      <p>Création et optimisation de campagnes Meta Ads : ciblage précis, concepts créatifs percutants et suivi de performance en continu.</p>
+      <span class="service-arrow">→</span>
+    </div>
+
   </div>
 </section>
 
-<!-- ════════════════ À PROPOS ════════════════ -->
-<section style="padding: 0;">
-  <div class="container" id="apropos">
-    <div class="apropos-photo">
-      <img src="photo.jpg" alt="Cassandre Clermont-Moquin" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;" />
-      <div class="apropos-badge-red">8 ans<br/>d'expé-<br/>rience</div>
+<!-- ════════════ À PROPOS ════════════ -->
+<section id="apropos">
+  <div class="apropos-img">
+    <img src="photo.jpg" alt="Cassandre Clermont-Moquin" />
+    <div class="apropos-badge-red">8 ans<br/>d'expé-<br/>rience</div>
+  </div>
+  <div class="apropos-content">
+    <span class="tag">À propos</span>
+    <h2>Allô, moi<br/>c'est <em>Cassandre</em></h2>
+    <p>Stratège en marketing et communications depuis 8 ans, j'ai une profonde passion pour les messages à impact et les concepts qui connectent réellement avec les gens.</p>
+    <p>J'aime créer des stratégies authentiques qui allient créativité, clarté et pertinence, afin de bâtir des marques fortes et humaines. Basée à Saint-Basile-le-Grand, je travaille avec des entreprises et OBNL à travers tout le Québec.</p>
+    <div class="apropos-chips">
+      <span class="chip">Stratégie de contenu</span>
+      <span class="chip">Gestion d'équipe</span>
+      <span class="chip">Meta Ads</span>
+      <span class="chip">Gestion de projets</span>
+      <span class="chip">Marketing B2C</span>
     </div>
-    <div class="apropos-content">
-      <span class="tag">À propos</span>
-      <h2>Allô, moi<br/>c'est <em>Cassandre</em></h2>
-      <p>Stratège en marketing et communications depuis 8 ans, j'ai une profonde passion pour les messages à impact et les concepts qui connectent réellement avec les gens.</p>
-      <p>J'aime créer des stratégies authentiques qui allient créativité, clarté et pertinence, afin de bâtir des marques fortes et humaines. Basée à Saint-Basile-le-Grand, je travaille avec des entreprises et OBNL à travers tout le Québec.</p>
-      <div class="apropos-chips">
-        <span class="chip">Stratégie de contenu</span>
-        <span class="chip">Gestion d'équipe</span>
-        <span class="chip">Meta Ads</span>
-        <span class="chip">Gestion de projets</span>
-        <span class="chip">Marketing B2C</span>
-      </div>
-      <a href="#cta" class="btn btn-primary">Discutons de votre projet →</a>
-    </div>
+    <a href="#cta" class="btn btn-primary">Discutons de votre projet →</a>
   </div>
 </section>
 
-<!-- ════════════════ PROCESS ════════════════ -->
+<!-- ════════════ PROCESS ════════════ -->
 <section id="process">
-  <div class="container">
-    <div class="section-header">
-      <span class="tag" style="color:#fff;border-color:rgba(255,255,255,.3);">Mon approche</span>
-      <h2>Une méthode claire,<br/><em>de A à Z</em></h2>
-      <p>Je travaille de façon structurée et transparente. Vous savez toujours où en est votre projet.</p>
+  <div class="process-header">
+    <h2>Une méthode claire,<br/><em>de A à Z</em></h2>
+    <p>Je travaille de façon structurée et transparente. Vous savez toujours où en est votre projet.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <h3>Écoute &amp; découverte</h3>
+      <p>On prend le temps de comprendre vos enjeux, votre clientèle cible et ce qui vous différencie de la concurrence.</p>
     </div>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <h3>Écoute &amp; découverte</h3>
-        <p>On prend le temps de comprendre vos enjeux, votre clientèle cible et ce qui vous différencie de la concurrence.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <h3>Stratégie sur mesure</h3>
-        <p>Je construis un plan d'action adapté à votre réalité, vos ressources et vos ambitions sans que ce soit compliqué.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <h3>Exécution &amp; suivi</h3>
-        <p>Mise en œuvre rigoureuse, coordination des parties prenantes et ajustements en temps réel selon les résultats.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <h3>Bilan &amp; optimisation</h3>
-        <p>Analyse des résultats, documentation des apprentissages et recommandations pour la prochaine phase.</p>
-      </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <h3>Stratégie sur mesure</h3>
+      <p>Je construis un plan d'action adapté à votre réalité, vos ressources et vos ambitions sans que ce soit compliqué.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <h3>Exécution &amp; suivi</h3>
+      <p>Mise en œuvre rigoureuse, coordination des parties prenantes et ajustements en temps réel selon les résultats.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <h3>Bilan &amp; optimisation</h3>
+      <p>Analyse des résultats, documentation des apprentissages et recommandations pour la prochaine phase.</p>
     </div>
   </div>
 </section>
 
+<!-- ════════════ TÉMOIGNAGES ════════════ -->
+<section id="temoignages">
+  <div class="temoignages-header">
+    <span class="tag">Témoignages</span>
+    <h2>Ce que disent<br/><em>mes clients</em></h2>
+  </div>
+  <div class="temoignages-grid">
 
-<!-- ════════════════ TÉMOIGNAGES ════════════════ -->
-<section id="temoignages" style="background: var(--blanc);">
-  <div class="container">
-    <div class="section-header">
-      <span class="tag">Témoignages</span>
-      <h2>Ce que disent<br/><em>mes clients</em></h2>
-      <p>Les relations humaines sont au cœur de mon travail. Voici ce que vivent ceux avec qui je collabore.</p>
+    <div class="temoignage-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"J'ai eu le plaisir de travailler avec Cassandre. C'est une collègue créative, investie dans ses projets et toujours à l'affût des nouveautés et des possibilités d'amélioration. Elle fait preuve d'un enthousiasme contagieux qui rejaillit sur le reste de l'équipe et elle incarne des valeurs de bienveillance au travail. Pour toutes ces raisons, Cassandre est un atout à avoir dans une équipe pour sa compétence et ses qualités humaines."</blockquote>
+      <div class="temoignage-author">
+        <div class="author-avatar">CC</div>
+        <div>
+          <div class="author-name">Caroline Croteau</div>
+          <div class="author-role">Ancienne gestionnaire</div>
+        </div>
+      </div>
     </div>
-    <div class="temoignages-grid">
 
-      <div class="temoignage-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>
-          "J'ai eu le plaisir de travailler avec Cassandre. C'est une collègue créative, investie dans ses projets et toujours à l'affût des nouveautés et des possibilités d'amélioration. Elle fait preuve d'un enthousiasme contagieux qui rejaillit sur le reste de l'équipe et elle incarne des valeurs de bienveillance au travail. Pour toutes ces raisons, Cassandre est un atout à avoir dans une équipe pour sa compétence et ses qualités humaines."
-        </blockquote>
-        <div class="temoignage-author">
-          <div class="author-avatar">CC</div>
-          <div>
-            <div class="author-name">Caroline Croteau</div>
-            <div class="author-role">Ancienne gestionnaire</div>
-          </div>
+    <div class="temoignage-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Cassandre s'est jointe à notre équipe en tant que stratège marketing il y a environ un an. Elle a beaucoup de qualités que je recherchais : méticuleuse, organisée, stratégique, assidue. Elle maîtrise bien le marché, la clientèle cible et demeure à l'écoute de nos besoins. En plus de son efficacité et adaptabilité, sa personnalité est des plus agréable et contagieuse. Je recommanderais ses services à toute entreprise voulant gagner plus de visibilité et augmenter leurs chiffres d'affaires."</blockquote>
+      <div class="temoignage-author">
+        <div class="author-avatar">KP</div>
+        <div>
+          <div class="author-name">Kim Parenteau</div>
+          <div class="author-role">Fondatrice, WILDGRACE</div>
         </div>
       </div>
-
-      <div class="temoignage-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>
-          "Cassandre s'est jointe à notre équipe en tant que stratège marketing il y a environ un an. Elle a beaucoup de qualités que je recherchais : méticuleuse, organisée, stratégique, assidue. Elle maîtrise bien le marché, la clientèle cible et demeure à l'écoute de nos besoins. En plus de son efficacité et adaptabilité, sa personnalité est des plus agréable et contagieuse. Je recommanderais ses services à toute entreprise voulant gagner plus de visibilité et augmenter leurs chiffres d'affaires."
-        </blockquote>
-        <div class="temoignage-author">
-          <div class="author-avatar">KP</div>
-          <div>
-            <div class="author-name">Kim Parenteau</div>
-            <div class="author-role">Fondatrice, WILDGRACE</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="temoignage-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>
-          "J'ai été très impressionnée par le fait que Cassandre ait pris le temps d'étudier mon site web et mon offre avant notre première rencontre afin de pouvoir me donner des objectifs et des stratégies spécifiques et adaptés à mes besoins uniques. J'ai également apprécié qu'elle ait été en mesure d'atténuer mon anxiété en me donnant des stratégies gérables que je pouvais réaliser par moi-même. Trop hâte de voir les résultats!"
-        </blockquote>
-        <div class="temoignage-author">
-          <div class="author-avatar">NL</div>
-          <div>
-            <div class="author-name">Nadia Luna</div>
-            <div class="author-role">Fondatrice, Lussona Agency</div>
-          </div>
-        </div>
-      </div>
-
-
     </div>
+
+    <div class="temoignage-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"J'ai été très impressionnée par le fait que Cassandre ait pris le temps d'étudier mon site web et mon offre avant notre première rencontre afin de pouvoir me donner des objectifs et des stratégies spécifiques et adaptés à mes besoins uniques. J'ai également apprécié qu'elle ait été en mesure d'atténuer mon anxiété en me donnant des stratégies gérables que je pouvais réaliser par moi-même. Trop hâte de voir les résultats!"</blockquote>
+      <div class="temoignage-author">
+        <div class="author-avatar">NL</div>
+        <div>
+          <div class="author-name">Nadia Luna</div>
+          <div class="author-role">Fondatrice, Lussona Agency</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ════════════════ CTA ════════════════ -->
+<!-- ════════════ CONFÉRENCES ════════════ -->
+<section id="conferences">
+  <div class="conferences-content">
+    <span class="tag">Autre activité</span>
+    <h2>Conférencière en<br/><em>santé mentale</em></h2>
+    <p>En parallèle de mon travail en marketing, je partage mon savoir expérientiel en lien avec la santé mentale à travers des conférences engagées et authentiques.</p>
+    <p>Si vous souhaitez m'inviter à prendre la parole lors d'un événement, d'une journée thématique ou dans votre organisation, je vous invite à me contacter par courriel.</p>
+    <br/>
+    <a href="mailto:moquin.cassandre@gmail.com" class="btn btn-primary">Me contacter pour une conférence →</a>
+  </div>
+  <div class="conferences-right">
+    <ul>
+      <li><span class="conf-dot"></span><span>Savoir expérientiel authentique</span></li>
+      <li><span class="conf-dot"></span><span>Adapté à votre contexte et public</span></li>
+      <li><span class="conf-dot"></span><span>Espaces de dialogue et de réflexion</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════════════ CTA ════════════ -->
 <section id="cta">
-  <div class="container" style="text-align:center;">
-    <span class="tag" style="color:#fff;border-color:rgba(255,255,255,.4);">Prête à démarrer</span>
-    <h2>Votre projet mérite<br/>une vraie stratégie.</h2>
-    <p>Discutons de vos objectifs lors d'un appel découverte gratuit de 20 minutes. Aucun engagement.</p>
-    <a href="https://meet.brevo.com/cassandre-clermont-moquin/appel-exploratoire" target="_blank" class="btn btn-light">Réserver un appel gratuit →</a>
-  </div>
+  <span class="tag" style="color:#fff;border-color:rgba(255,255,255,.4);">Prête à démarrer</span>
+  <h2>Votre projet mérite<br/>une vraie stratégie.</h2>
+  <p>Discutons de vos objectifs lors d'un appel découverte gratuit de 20 minutes. Aucun engagement.</p>
+  <a href="https://meet.brevo.com/cassandre-clermont-moquin/appel-exploratoire" target="_blank" class="btn btn-light">Réserver un appel gratuit →</a>
 </section>
 
-<!-- ════════════════ CONFÉRENCES ════════════════ -->
-<section id="conferences" style="background: var(--creme-dk); padding: 100px 0;">
-  <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-    <div>
-      <span class="tag">Autre activité</span>
-      <h2 style="font-family:'The Seasons',serif; font-size: clamp(32px,3.5vw,48px); font-weight:normal; letter-spacing:-.01em; line-height:1.1; margin-bottom:28px;">
-        Conférencière en<br/><em style="font-style:normal; color:var(--rouge);">santé mentale</em>
-      </h2>
-      <p style="font-size:16px; color:var(--gris); line-height:1.75; margin-bottom:18px;">
-        En parallèle de mon travail en marketing, je partage mon savoir expérientiel en lien avec la santé mentale à travers des conférences engagées et authentiques.
-      </p>
-      <p style="font-size:16px; color:var(--gris); line-height:1.75; margin-bottom:36px;">
-        Si vous souhaitez m'inviter à prendre la parole lors d'un événement, d'une journée thématique ou dans votre organisation, je vous invite à me contacter par courriel.
-      </p>
-      <a href="mailto:moquin.cassandre@gmail.com" class="btn btn-primary">Me contacter pour une conférence →</a>
-    </div>
-    <div style="background: linear-gradient(135deg, var(--creme) 0%, var(--creme-dk) 100%); border-radius: 24px; padding: 48px 40px; border: 1.5px solid rgba(0,0,0,.07);">
-      <div style="font-size: 40px; margin-bottom: 20px;">🎤</div>
-      <h3 style="font-size:20px; font-weight:700; margin-bottom:12px; letter-spacing:-.02em;">Conférences sur mesure</h3>
-      <p style="font-size:15px; color:var(--gris); line-height:1.65; margin-bottom:24px;">Je partage mon vécu avec vulnérabilité et profondeur, pour créer des espaces de dialogue autour de la santé mentale.</p>
-      <ul style="list-style:none; display:flex; flex-direction:column; gap:12px;">
-        <li style="display:flex; align-items:center; gap:12px; font-size:15px; font-weight:500;">
-          <span style="width:8px;height:8px;background:var(--rouge);border-radius:50%;flex-shrink:0;"></span> Savoir expérientiel authentique
-        </li>
-        <li style="display:flex; align-items:center; gap:12px; font-size:15px; font-weight:500;">
-          <span style="width:8px;height:8px;background:var(--rouge);border-radius:50%;flex-shrink:0;"></span> Adapté à votre contexte et public
-        </li>
-        <li style="display:flex; align-items:center; gap:12px; font-size:15px; font-weight:500;">
-          <span style="width:8px;height:8px;background:var(--rouge);border-radius:50%;flex-shrink:0;"></span> Espaces de dialogue et de réflexion
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════ FOOTER ════════════════ -->
+<!-- ════════════ FOOTER ════════════ -->
 <footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="logo.png" alt="Cassandre CM" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:.85;" />
-        </div>
-        <p>Stratège marketing &amp; chargée de projet basée à Saint-Basile-le-Grand. Des projets humains, des résultats mesurables.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="#services">Stratégie marketing</a>
-        <a href="#services">Gestion de projet</a>
-        <a href="#services">Publicité numérique</a>
-        <a href="#conferences">Conférences</a>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="#apropos">À propos</a>
-        <a href="#process">Approche</a>
-        <a href="#temoignages">Témoignages</a>
-        <a href="#cta">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:moquin.cassandre@gmail.com">moquin.cassandre@gmail.com</a>
-        <a href="https://www.linkedin.com/in/cassandre-clermont-moquin-bb9820114/" target="_blank">LinkedIn</a>
-        <a href="#cta">Réserver un appel</a>
-      </div>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Cassandre CM" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:.8;" />
+      <p>Stratège marketing &amp; chargée de projet basée à Saint-Basile-le-Grand. Des projets humains, des résultats mesurables.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Cassandre CM. Saint-Basile-le-Grand, Québec.</p>
-      <p>Fait avec intention &amp; un peu de café ☕</p>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Stratégie marketing</a>
+      <a href="#services">Gestion de projet</a>
+      <a href="#services">Publicité numérique</a>
+      <a href="#conferences">Conférences</a>
     </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#apropos">À propos</a>
+      <a href="#process">Approche</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#cta">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:moquin.cassandre@gmail.com">moquin.cassandre@gmail.com</a>
+      <a href="https://www.linkedin.com/in/cassandre-clermont-moquin-bb9820114/" target="_blank">LinkedIn</a>
+      <a href="#cta">Réserver un appel</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Cassandre CM. Saint-Basile-le-Grand, Québec.</p>
+    <p>Fait avec intention &amp; un peu de café ☕</p>
   </div>
 </footer>
 
 <script>
   document.querySelectorAll('h1, h2, h3').forEach(el => {
-    el.innerHTML = el.innerHTML.replace(/['‘’ʼ]/g, '<span style="font-family:\'Space Grotesk\',sans-serif">$&</span>');
+    el.innerHTML = el.innerHTML.replace(/['''ʼ]/g, '<span style="font-family:\'DM Sans\',sans-serif">$&</span>');
   });
 </script>
 </body>
