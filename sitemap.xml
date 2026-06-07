@@ -12,4 +12,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.cassandrecm.com/blog.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cassandrecm.com/articles/veille-marketing-competence-sous-estimee.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
