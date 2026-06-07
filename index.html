@@ -291,6 +291,54 @@
     }
     .intro-cta a:hover { color: var(--creme); }
 
+    /* ── COMPTEUR ── */
+    #compteur {
+      background: var(--creme);
+      padding: 64px 48px;
+      border-top: 1px solid var(--creme-dk);
+    }
+    .compteur-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+    }
+    .compteur-item {
+      text-align: center;
+      padding: 24px 48px;
+      flex: 1; min-width: 200px;
+    }
+    .compteur-number {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(44px, 6vw, 72px);
+      font-weight: normal;
+      color: var(--noir);
+      line-height: 1;
+      margin-bottom: 12px;
+      display: flex; align-items: baseline; justify-content: center; gap: 4px;
+    }
+    .compteur-prefix {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-style: italic;
+      color: var(--noir);
+    }
+    .compteur-suffix { font-size: 0.55em; color: var(--rouge); }
+    .compteur-label {
+      font-size: 14px; color: var(--gris);
+      line-height: 1.5; font-weight: 400;
+      letter-spacing: .01em;
+    }
+    .compteur-sep {
+      font-size: 48px; color: var(--rouge);
+      padding: 0 8px; align-self: center;
+      opacity: 0.4; line-height: 1;
+    }
+    @media (max-width: 700px) {
+      .compteur-sep { display: none; }
+      .compteur-item { padding: 20px 24px; border-bottom: 1px solid var(--creme-dk); }
+      .compteur-item:last-child { border-bottom: none; }
+    }
+
     /* ── SERVICES ── */
     #services { padding: 120px 64px; background: var(--blanc); }
     .services-label {
@@ -586,6 +634,40 @@
   </div>
 </div>
 
+<!-- ════════════ COMPTEUR ════════════ -->
+<section id="compteur">
+  <div class="compteur-inner">
+
+    <div class="compteur-item">
+      <div class="compteur-number">
+        <span class="count" data-target="8">0</span>
+        <span class="compteur-suffix"> ans</span>
+      </div>
+      <p class="compteur-label">de plaisir<br>et d'expérience</p>
+    </div>
+
+    <div class="compteur-sep" aria-hidden="true">·</div>
+
+    <div class="compteur-item">
+      <div class="compteur-number">
+        <span class="compteur-prefix">Plusieurs</span>
+      </div>
+      <p class="compteur-label">clients<br>satisfaits</p>
+    </div>
+
+    <div class="compteur-sep" aria-hidden="true">·</div>
+
+    <div class="compteur-item">
+      <div class="compteur-number">
+        <span class="count" data-target="400">0</span>
+        <span class="compteur-suffix">+</span>
+      </div>
+      <p class="compteur-label">tasses de café<br>et de thé</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- ════════════ SERVICES ════════════ -->
 <section id="services">
   <p class="services-label">Ce que je fais</p>
@@ -776,6 +858,40 @@
   </div>
 </footer>
 
+<script>
+  // Animation des compteurs au scroll
+  (function() {
+    var counts = document.querySelectorAll('.count');
+    if (!counts.length) return;
+    var started = false;
+    function animateCount(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var duration = 1600;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        // ease out cubic
+        var ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          counts.forEach(animateCount);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    var section = document.getElementById('compteur');
+    if (section) observer.observe(section);
+  })();
+</script>
 <script>
   // Remplace les apostrophes par DM Sans dans les nœuds texte seulement (pas dans les attributs HTML)
   document.querySelectorAll('h1, h2, h3, .intro-text').forEach(function(el) {
