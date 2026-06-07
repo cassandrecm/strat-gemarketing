@@ -752,9 +752,9 @@
     var node;
     while ((node = walker.nextNode())) nodes.push(node);
     nodes.forEach(function(textNode) {
-      if (/['''ʼ]/.test(textNode.textContent)) {
+      if (/['''ʼ\-–—]/.test(textNode.textContent)) {
         var temp = document.createElement('span');
-        temp.innerHTML = textNode.textContent.replace(/['''ʼ]/g, '<span style="font-family:\'DM Sans\',sans-serif">$&</span>');
+        temp.innerHTML = textNode.textContent.replace(/['''ʼ\-–—]/g, '<span style="font-family:\'DM Sans\',sans-serif">$&</span>');
         while (temp.firstChild) textNode.parentNode.insertBefore(temp.firstChild, textNode);
         textNode.parentNode.removeChild(textNode);
       }
