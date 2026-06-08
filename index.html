@@ -269,35 +269,6 @@
     .btn-dark { background: var(--noir); color: #fff; }
     .btn-light { background: var(--creme); color: var(--noir); }
 
-    /* ── DOODLES ── */
-    .doodle-underline-wrap { position: relative; display: inline-block; }
-    .doodle-underline {
-      position: absolute; bottom: -8px; left: -4px;
-      width: calc(100% + 8px); height: 18px;
-      overflow: visible;
-    }
-    .doodle-underline path,
-    .doodle-circle path,
-    .doodle-arrow path {
-      stroke-dasharray: 300;
-      stroke-dashoffset: 300;
-      transition: stroke-dashoffset 1s cubic-bezier(.4,0,.2,1);
-    }
-    .doodle-circle-wrap { position: relative; display: inline-block; padding: 2px 6px; }
-    .doodle-circle {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: calc(100% + 24px); height: calc(100% + 16px);
-      overflow: visible; pointer-events: none;
-    }
-    .doodle-arrow path { stroke-dasharray: 200; stroke-dashoffset: 200; }
-    /* Déclenché quand visible */
-    .doodle-drawn .doodle-underline path,
-    .doodle-drawn .doodle-circle path,
-    .doodle-drawn .doodle-arrow path { stroke-dashoffset: 0; }
-    .doodle-circle-wrap.doodle-drawn .doodle-circle path { stroke-dashoffset: 0; }
-    .doodle-arrow.doodle-drawn path { stroke-dashoffset: 0; }
-
     /* ── INTRO STRIP ── */
     #intro {
       background: var(--noir);
@@ -588,7 +559,7 @@
     <h1 class="hero-h1">
       Stratégie.<br/>
       Projets.<br/>
-      <em class="doodle-underline-wrap">Résultats.<svg class="doodle-underline" viewBox="0 0 200 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10 C30 4, 60 16, 100 9 C140 2, 170 14, 196 8" stroke="#D4A84B" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg></em>
+      <em>Résultats.</em>
     </h1>
     <p class="hero-desc">
       J'aide les organisations québécoises à clarifier leur positionnement, orchestrer leurs campagnes et livrer des projets marketing qui ont un vrai impact.
@@ -610,7 +581,7 @@
 <!-- ════════════ INTRO STRIP ════════════ -->
 <div id="intro">
   <p class="intro-text">
-    Pas de formules toutes faites. Chaque mandat est conçu <em class="doodle-circle-wrap">sur mesure<svg class="doodle-circle" viewBox="0 0 180 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M90 4 C130 2, 172 12, 174 26 C176 40, 140 48, 90 48 C40 48, 6 40, 6 26 C6 12, 50 2, 90 4 Z" stroke="#D4A84B" stroke-width="3" stroke-linecap="round" fill="none"/></svg></em>, avec une vision claire et un plan d'action concret.
+    Pas de formules toutes faites. Chaque mandat est conçu <em>sur mesure</em>, avec une vision claire et un plan d'action concret.
   </p>
   <div class="intro-cta">
     <a href="#services">Découvrir mes services</a>
@@ -664,13 +635,7 @@
       <span class="chip">Gestion de projets</span>
       <span class="chip">Marketing B2C</span>
     </div>
-    <div style="position:relative;display:inline-block;">
-      <a href="#cta" class="btn btn-primary">Discutons de votre projet</a>
-      <svg class="doodle-arrow" viewBox="0 0 70 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;top:-48px;right:-52px;width:65px;height:50px;pointer-events:none;">
-        <path d="M8 6 C18 2, 38 8, 52 28 C58 38, 60 46, 58 50" stroke="#D4A84B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <path d="M50 44 L58 50 L54 40" stroke="#D4A84B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-    </div>
+    <a href="#cta" class="btn btn-primary">Discutons de votre projet</a>
   </div>
 </section>
 
@@ -844,34 +809,6 @@
       navLinks.classList.remove('open');
     });
   });
-</script>
-
-<!-- Doodles animation au scroll -->
-<script>
-(function() {
-  // Soulignement hero — déclenché immédiatement (déjà visible)
-  var heroWrap = document.querySelector('.hero-h1 .doodle-underline-wrap');
-  if (heroWrap) setTimeout(function(){ heroWrap.classList.add('doodle-drawn'); }, 600);
-
-  // Cercle intro strip + flèche CTA — déclenchés au scroll
-  var targets = [
-    document.querySelector('.doodle-circle-wrap'),
-    document.querySelector('.doodle-arrow')
-  ];
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('doodle-drawn');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    targets.forEach(function(t){ if (t) obs.observe(t); });
-  } else {
-    targets.forEach(function(t){ if (t) t.classList.add('doodle-drawn'); });
-  }
-})();
 </script>
 
 <!-- Curseur personnalisé -->
