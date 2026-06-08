@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conférences en santé mentale — Cassandre CM</title>
+  <meta name="description" content="Cassandre Clermont-Moquin, conférencière en santé mentale. Conférences sur mesure pour écoles et entreprises : bipolarité, rétablissement, leadership humain, parentalité." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="../curseur-fleur.png" />
+  <link rel="apple-touch-icon" href="../curseur-fleur.png" />
+  <link rel="canonical" href="https://www.cassandrecm.com/conferences/" />
+
+  <!-- ── Schema.org ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.cassandrecm.com/#cassandre",
+        "name": "Cassandre Clermont-Moquin",
+        "jobTitle": "Conférencière en santé mentale",
+        "url": "https://www.cassandrecm.com/conferences.html",
+        "image": "https://www.cassandrecm.com/photo-opt.jpg",
+        "sameAs": ["https://www.linkedin.com/in/cassandre-clermont-moquin-bb9820114/"],
+        "knowsAbout": ["Santé mentale", "Bipolarité", "Rétablissement psychotique", "Leadership humain", "Parentalité et santé mentale"]
+      },
+      {
+        "@type": "Book",
+        "name": "Bouquet de psychoses",
+        "author": {"@id": "https://www.cassandrecm.com/#cassandre"},
+        "inLanguage": "fr",
+        "offers": {
+          "@type": "Offer",
+          "price": "25.00",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/PreOrder",
+          "url": "https://buy.stripe.com/7sY8wOfJ75gBe8r5Pi8g000"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "Conférences en santé mentale — Cassandre CM",
+        "description": "Conférences sur mesure sur la santé mentale pour écoles et entreprises au Québec. Sujets : bipolarité, rétablissement, leadership humain, parentalité.",
+        "organizer": {"@id": "https://www.cassandrecm.com/#cassandre"},
+        "location": {"@type": "VirtualLocation", "url": "https://www.cassandrecm.com/conferences.html"},
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'The Seasons';
+      src: url('../fonts/the-seasons.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rouge:    #B81C1C;
+      --rouge-dk: #8C1515;
+      --noir:     #161614;
+      --creme:    #EDECE7;
+      --creme-dk: #E0DED8;
+      --blanc:    #F7F6F2;
+      --gris:     #6B6B68;
+      --sauge:    #B81C1C;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--blanc);
+      color: var(--noir);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(237,236,231,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--creme-dk);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; max-width: 1200px; margin: 0 auto; padding: 0 32px;
+    }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a {
+      text-decoration: none; color: var(--gris);
+      font-size: 14px; font-weight: 500; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--noir); }
+    .nav-links .btn-nav {
+      background: var(--noir); color: #fff !important;
+      padding: 10px 22px; border-radius: 6px;
+      font-size: 13px; font-weight: 600;
+      transition: background .2s;
+    }
+    .nav-links .btn-nav:hover { background: var(--rouge); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--noir); border-radius: 2px;
+      transition: all .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(237,236,231,.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--creme-dk);
+        padding: 12px 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 14px 32px; font-size: 15px;
+        border-bottom: 1px solid var(--creme-dk);
+      }
+      .nav-links a:last-child { border-bottom: none; margin: 12px 32px 4px; }
+      .hamburger { display: flex; }
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 8px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: all .2s; cursor: pointer;
+      border: none;
+    }
+    .btn-primary { background: var(--rouge); color: #fff; }
+    .btn-primary:hover { background: var(--rouge-dk); }
+    .btn-outline { background: transparent; color: var(--noir); border: 2px solid var(--noir); }
+    .btn-outline:hover { background: var(--noir); color: #fff; }
+    .btn-sauge { background: var(--sauge); color: #fff; }
+    .btn-sauge:hover { opacity: .88; }
+
+    /* ── HERO ── */
+    #hero-conf {
+      padding-top: 68px;
+      background: var(--noir);
+      color: #fff;
+      min-height: 60vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding-bottom: 80px;
+    }
+    .hero-conf-inner {
+      max-width: 780px; padding: 80px 32px 0;
+    }
+    .hero-conf-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--sauge);
+      margin-bottom: 24px;
+    }
+    .hero-conf-h1 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(40px, 6vw, 78px);
+      font-weight: normal; line-height: 1.05;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+    .hero-conf-h1 em { font-style: normal; color: var(--sauge); }
+    .hero-conf-desc {
+      font-size: 18px; color: rgba(255,255,255,.65);
+      line-height: 1.7; max-width: 600px; margin: 0 auto 40px;
+    }
+
+    /* ── HISTOIRE ── */
+    #histoire {
+      padding: 100px 32px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .histoire-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .histoire-photo {
+      position: relative;
+    }
+    .histoire-photo img {
+      width: 100%; height: 620px;
+      object-fit: cover; object-position: top;
+      border-radius: 16px;
+      display: block;
+    }
+    .histoire-content h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: normal; margin-bottom: 32px;
+      line-height: 1.2;
+    }
+    .histoire-content h2 em { font-style: normal; color: var(--rouge); }
+    .histoire-pullquote {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(22px, 2.5vw, 32px);
+      color: var(--rouge);
+      line-height: 1.3;
+      border-left: 3px solid var(--rouge);
+      padding-left: 24px;
+      margin-bottom: 32px;
+    }
+    .histoire-text p {
+      font-size: 16px; color: var(--gris);
+      line-height: 1.85; margin-bottom: 16px;
+    }
+    .histoire-text p:last-child { margin-bottom: 0; }
+    @media (max-width: 900px) {
+      .histoire-grid { grid-template-columns: 1fr; gap: 48px; }
+      .histoire-photo img { height: 420px; }
+    }
+
+    /* ── CONFÉRENCES CARDS ── */
+    #sujets {
+      background: var(--creme);
+      padding: 100px 32px;
+    }
+    .sujets-inner { max-width: 1100px; margin: 0 auto; }
+    .sujets-header { text-align: center; margin-bottom: 64px; }
+    .sujets-header h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: normal; margin-bottom: 16px;
+    }
+    .sujets-header p { font-size: 17px; color: var(--gris); max-width: 560px; margin: 0 auto; }
+    .sujets-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .sujet-card {
+      background: var(--blanc);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .sujet-card h3 {
+      font-family: 'The Seasons', serif;
+      font-size: 24px; font-weight: normal;
+      color: var(--sauge); margin-bottom: 20px; line-height: 1.25;
+    }
+    .sujet-card p {
+      font-size: 15px; color: var(--gris);
+      line-height: 1.75; margin-bottom: 32px; flex: 1;
+    }
+    @media (max-width: 768px) {
+      .sujets-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── LIVRE ── */
+    #livre {
+      background: var(--noir);
+      padding: 100px 32px;
+    }
+    .livre-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .livre-visuel {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .book-mockup {
+      position: relative; width: 230px; height: 320px;
+      transform: perspective(900px) rotateY(-12deg);
+      filter: drop-shadow(-16px 24px 48px rgba(0,0,0,.5));
+      border-radius: 3px 10px 10px 3px;
+      overflow: hidden;
+    }
+    .book-cover {
+      width: 100%; height: 100%;
+      position: relative;
+    }
+    .book-cover img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .book-cover::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 18px;
+      background: linear-gradient(to right, rgba(0,0,0,.35), rgba(0,0,0,0));
+      z-index: 1;
+    }
+    .livre-badge {
+      position: absolute; top: -16px; right: -16px;
+      background: #fff; color: var(--rouge);
+      width: 72px; height: 72px; border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-weight: 700; font-size: 11px; text-align: center;
+      line-height: 1.2; z-index: 2;
+      box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    }
+    .livre-badge strong { font-size: 18px; display: block; }
+    .livre-content { color: #fff; }
+    .livre-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--rouge);
+      margin-bottom: 16px; display: block;
+    }
+    .livre-content h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(30px, 4vw, 50px);
+      font-weight: normal; line-height: 1.1;
+      margin-bottom: 24px; color: #fff;
+    }
+    .livre-content h2 em { font-style: italic; color: rgba(255,255,255,.55); }
+    .livre-desc {
+      font-size: 16px; color: rgba(255,255,255,.65);
+      line-height: 1.8; margin-bottom: 28px;
+    }
+    .livre-details {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-bottom: 36px;
+    }
+    .livre-detail {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,.55);
+    }
+    .livre-detail span.dot {
+      width: 6px; height: 6px;
+      background: var(--rouge); border-radius: 50%; flex-shrink: 0;
+    }
+    .livre-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-blanc { background: #fff; color: var(--noir); }
+    .btn-blanc:hover { background: var(--creme); }
+    .livre-dispo {
+      font-size: 13px; color: rgba(255,255,255,.4);
+      font-style: italic;
+    }
+    @media (max-width: 900px) {
+      .livre-inner { grid-template-columns: 1fr; gap: 48px; }
+      .livre-visuel { order: -1; }
+    }
+
+    /* ── VIDÉO ── */
+    #video-conf {
+      padding: 100px 32px;
+      background: var(--noir);
+      text-align: center;
+    }
+    .video-inner { max-width: 900px; margin: 0 auto; }
+    #video-conf h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: normal; color: #fff;
+      margin-bottom: 16px;
+    }
+    #video-conf p { color: rgba(255,255,255,.6); font-size: 17px; margin-bottom: 48px; }
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%;
+      height: 0; overflow: hidden;
+      border-radius: 16px; background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+
+    /* ── REVUE DE PRESSE ── */
+    #presse {
+      padding: 100px 32px;
+      max-width: 1100px; margin: 0 auto;
+    }
+    #presse h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: normal; margin-bottom: 60px;
+      text-align: center;
+    }
+    .presse-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px 80px;
+    }
+    .presse-categorie h3 {
+      font-family: 'The Seasons', serif;
+      font-size: 22px; font-weight: normal;
+      color: var(--sauge);
+      border-bottom: 1px solid var(--creme-dk);
+      padding-bottom: 12px; margin-bottom: 24px;
+    }
+    .presse-list { display: flex; flex-direction: column; gap: 16px; }
+    .presse-item { display: flex; gap: 10px; }
+    .presse-year {
+      font-size: 13px; color: var(--gris);
+      font-weight: 500; min-width: 40px;
+      padding-top: 2px;
+    }
+    .presse-item a {
+      color: var(--noir); font-size: 15px;
+      line-height: 1.5; text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color .2s;
+    }
+    .presse-item a:hover { color: var(--rouge); }
+    .presse-item span {
+      color: var(--noir); font-size: 15px;
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) {
+      .presse-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── CONTACT ── */
+    #contact-conf {
+      background: var(--creme);
+      padding: 100px 32px;
+      text-align: center;
+    }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    #contact-conf h2 {
+      font-family: 'The Seasons', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: normal; margin-bottom: 16px;
+    }
+    #contact-conf p { color: var(--gris); font-size: 17px; margin-bottom: 40px; line-height: 1.7; }
+    .contact-form {
+      display: flex; flex-direction: column; gap: 16px;
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid var(--creme-dk);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      background: #fff;
+      color: var(--noir);
+      transition: border-color .2s;
+      outline: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--sauge); }
+    .contact-form textarea { resize: vertical; min-height: 140px; }
+    .contact-form button {
+      align-self: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--noir); color: rgba(255,255,255,.5);
+      padding: 40px 32px; text-align: center;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">
+      <img src="../logo.png" alt="Cassandre CM" />
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html" class="nav-close">Stratégie marketing</a>
+      <a href="#sujets" class="nav-close">Mes conférences</a>
+      <a href="#presse" class="nav-close">Revue de presse</a>
+      <a href="#contact-conf" class="btn-nav nav-close">Me contacter</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero-conf">
+  <div class="hero-conf-inner">
+    <p class="hero-conf-eyebrow">Conférencière en santé mentale</p>
+    <h1 class="hero-conf-h1">Briser les tabous,<br/><em>un mot à la fois.</em></h1>
+    <p class="hero-conf-desc">Des conférences authentiques et engagées sur la santé mentale, offertes sur mesure dans les écoles et les entreprises.</p>
+    <a href="#contact-conf" class="btn btn-sauge">Réserver une conférence</a>
+  </div>
+</section>
+
+<!-- ── HISTOIRE ── -->
+<section id="histoire">
+  <div class="histoire-grid">
+    <div class="histoire-photo">
+      <img src="../photo-opt.jpg" alt="Cassandre CM, conférencière en santé mentale" />
+    </div>
+    <div class="histoire-content">
+      <h2>Mon histoire, <em>ma force.</em></h2>
+      <p class="histoire-pullquote">Si je vous disais que j'ai déjà goûté à la folie, que j'étais sans domicile fixe et sans emploi. Est-ce que vous me croiriez ?</p>
+      <div class="histoire-text">
+        <p>Je me prénomme Cassandre CM, je suis une jeune maman de jumeaux dans le début de ma trentaine. J'ai la chance de mener une très belle vie et d'être heureuse, mais je n'en suis pas arrivée là sans effort.</p>
+        <p>En 2019, le contact avec la réalité se rompt lors d'une crise psychotique et je perds tous mes repères — domicile, relation amoureuse et travail. Je séjourne dans une aile psychiatrique où les traitements ne fonctionnent pas, et cette noirceur me conduit à vouloir m'enlever la vie. Avec l'aide de mes proches, un changement de médication et un soupçon de chance, je réussis enfin à sortir ma tête de l'eau.</p>
+        <p>Armée de résilience, je retrouve une stabilité après plusieurs mois. Maintenant rétablie et coexistant avec la maladie bipolaire, je souhaite aider les gens à se libérer de la stigmatisation. Je veux être celle que j'aurais aimé rencontrer lors de mon rétablissement : celle qui prouve que même avec un trouble grave de santé mentale, il est possible de mener une vie équilibrée et épanouissante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LIVRE ── -->
+<section id="livre">
+  <div class="livre-inner">
+    <div class="livre-visuel">
+      <div class="book-mockup">
+        <div class="book-cover">
+          <img src="../livre-cover.jpg" alt="Bouquet de psychoses — Cassandre CM" />
+        </div>
+      </div>
+    </div>
+    <div class="livre-content">
+      <span class="livre-eyebrow">Prévente — À paraître</span>
+      <h2>Bouquet de<br/><em>psychoses</em></h2>
+      <p class="livre-desc">Ce livre s'adresse à tout le monde — ceux qui traversent des épreuves, leurs proches, ceux qui veulent comprendre et ceux qui veulent agir. Il offre une vision nouvelle de la santé mentale, fondée sur l'authenticité, la vérité, la solidarité et l'espoir.</p>
+      <p class="livre-desc">En refermant ce livre, vous aurez voyagé au cœur de la psychose, mais aussi au cœur de l'être. Un appel à l'ouverture d'esprit et à tout ce qui fait de nous des humains.</p>
+      <div class="livre-details">
+        <div class="livre-detail"><span class="dot"></span>25 $ — frais de livraison inclus</div>
+        <div class="livre-detail"><span class="dot"></span>1 $ par livre vendu remis à la Fondation Douglas</div>
+      </div>
+      <div class="livre-actions">
+        <a href="https://buy.stripe.com/7sY8wOfJ75gBe8r5Pi8g000" target="_blank" rel="noopener" class="btn btn-blanc">Précommander mon exemplaire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUJETS ── -->
+<section id="sujets">
+  <div class="sujets-inner">
+    <div class="sujets-header">
+      <h2>Mes conférences</h2>
+      <p>Des sujets adaptés à votre public — entreprises, écoles, organismes. Je m'adapte à votre contexte et à vos besoins.</p>
+    </div>
+    <div class="sujets-grid">
+      <div class="sujet-card">
+        <h3>Le leadership humain</h3>
+        <p>On parle souvent de leadership positif, mais pour moi, il va au-delà de la motivation ou de la performance. Je crois profondément qu'un vrai leader est celui qui voit les membres de son équipe comme des humains avant tout, avec leurs forces, leurs limites, leurs rêves et leurs réalités personnelles.</p>
+        <a href="#contact-conf" class="btn btn-outline">Cette conférence m'intéresse !</a>
+      </div>
+      <div class="sujet-card">
+        <h3>L'épreuve, un allié à la reconstruction</h3>
+        <p>Cette conférence propose une réflexion profonde et positive sur la manière dont les épreuves, souvent perçues comme des obstacles, peuvent devenir des alliées précieuses pour mener une vie épanouissante. Je vous partage mon histoire de reconstruction.</p>
+        <a href="#contact-conf" class="btn btn-outline">Cette conférence m'intéresse !</a>
+      </div>
+      <div class="sujet-card">
+        <h3>La parentalité et la santé mentale</h3>
+        <p>Dans cette conférence intime et inspirante, je partagerai mon parcours unique en tant que mère bipolaire de jumeaux. J'aborderai les défis inattendus et les joies surprenantes que j'ai rencontrés lorsque mon projet d'avoir un seul enfant s'est transformé en l'arrivée de deux bébés.</p>
+        <a href="#contact-conf" class="btn btn-outline">Cette conférence m'intéresse !</a>
+      </div>
+      <div class="sujet-card">
+        <h3>Conférence jeunesse : T'es pas tout seul</h3>
+        <p>La détresse chez les adolescents est en hausse au Québec. Cette conférence donne aux jeunes des outils concrets pour identifier quand ça ne va pas, comprendre ce qui influence leur bien-être mental, et surtout savoir à qui parler. On aborde aussi comment supporter ses amis et l'importance de la confiance en soi. L'objectif : que chaque jeune reparte en sachant qu'il n'est jamais seul.</p>
+        <a href="#contact-conf" class="btn btn-outline">Cette conférence m'intéresse !</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDÉO ── -->
+<section id="video-conf">
+  <div class="video-inner">
+    <h2>Voyez-moi en action</h2>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/ihcp0nhnDFA"
+        title="Conférence — L'épreuve comme alliée à la reconstruction"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVUE DE PRESSE ── -->
+<section id="presse">
+  <h2>Revue de presse</h2>
+  <div class="presse-grid">
+
+    <div class="presse-categorie">
+      <h3>Conférences</h3>
+      <div class="presse-list">
+        <div class="presse-item">
+          <span class="presse-year">2024</span>
+          <span>Conférence hybride — L'épreuve comme alliée à la reconstruction&nbsp;: la vie avant, pendant et après une psychose avec l'ACSM</span>
+        </div>
+        <div class="presse-item">
+          <span class="presse-year">2020</span>
+          <a href="https://www.youtube.com/watch?v=0EFUOaC455I" target="_blank" rel="noopener">Table ronde — Santé mentale avec Cassandre Clermont-Moquin — Reflet de Société</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="presse-categorie">
+      <h3>Articles</h3>
+      <div class="presse-list">
+        <div class="presse-item">
+          <span class="presse-year">2024</span>
+          <a href="https://www.lesaffaires.com/strategie-d-entreprise/management/comment-aider-un-employe-qui-vit-un-episode-psychotique/646733" target="_blank" rel="noopener">"Comment aider un employé qui vit un épisode psychotique" — Journal Les affaires</a>
+        </div>
+        <div class="presse-item">
+          <span class="presse-year">2024</span>
+          <a href="https://www.24heures.ca/2024/01/09/une-jeune-mere-bipolaire-temoigne-de-la-difficulte-de-se-reconstruire-apres-une-psychose" target="_blank" rel="noopener">Article "Une jeune mère bipolaire témoigne de la difficulté de se reconstruire après une psychose" — Le 24 heures</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="presse-categorie">
+      <h3>Podcasts</h3>
+      <div class="presse-list">
+        <div class="presse-item">
+          <span class="presse-year">2026</span>
+          <a href="https://www.youtube.com/watch?v=LDRFZdvbj0E&t=4158s" target="_blank" rel="noopener">PARENTHÈSE avec Lysandre Nadeau et Claude Bégin — Bipolarité et la réalité d'une maman</a>
+        </div>
+        <div class="presse-item">
+          <span class="presse-year">2024</span>
+          <a href="https://www.youtube.com/watch?v=PSn01hqnh_A&t=3163s" target="_blank" rel="noopener">Faut qu'on en parle — BIPOLARITÉ et épisodes psychotiques avec Cassandre Moquin</a>
+        </div>
+        <div class="presse-item">
+          <span class="presse-year">2023</span>
+          <a href="https://music.amazon.com/es-us/podcasts/a1db1fb7-e698-4507-8e38-8aae0bfee8ca/episodes/f1386efa-1b5c-496f-b4b1-c338739d0041/na%C3%AEtre-ensemble-26---une-heureuse-naissance-de-jumeaux-avec-cassandre-clermont-moquin" target="_blank" rel="noopener">Une heureuse naissance de jumeaux avec Cassandre Clermont-Moquin — Naître Ensemble</a>
+        </div>
+        <div class="presse-item">
+          <span class="presse-year">2021</span>
+          <a href="https://www.youtube.com/watch?v=THtbjZZV6rw" target="_blank" rel="noopener">Perceptions #4 — Vivre une psychose de 4 mois animé par Claudie Mercier</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="presse-categorie">
+      <h3>Documentaires</h3>
+      <div class="presse-list">
+        <div class="presse-item">
+          <span class="presse-year">2021</span>
+          <a href="https://www.youtube.com/watch?v=WML7i5-d8c4" target="_blank" rel="noopener">LA PSYCHOSE — Documentaire (SANTÉ MENTALE) par Jack Leblanc et Gabriel Julien</a>
+        </div>
+        <div class="presse-item">
+          <span class="presse-year">2020</span>
+          <a href="https://vimeo.com/429298858" target="_blank" rel="noopener">La Vague par Jonathan Gaudreau et Laurence Boisseau</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact-conf">
+  <div class="contact-inner">
+    <h2>Une question ? Une collaboration ?</h2>
+    <p>N'hésitez pas à me contacter pour toute question sur mes conférences ou pour discuter d'une collaboration.</p>
+    <a href="mailto:moquin.cassandre@gmail.com" class="btn btn-primary">M'écrire</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2026 Cassandre Clermont-Moquin &nbsp;·&nbsp; <a href="../index.html">Retour au site marketing</a> &nbsp;·&nbsp; <a href="mailto:moquin.cassandre@gmail.com">moquin.cassandre@gmail.com</a></p>
+</footer>
+
+<script>
+  // Apostrophes : remplace dans les nœuds texte seulement
+  document.querySelectorAll('h1, h2, h3, .histoire-text p, .histoire-pullquote').forEach(function(el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    nodes.forEach(function(textNode) {
+      if (/['''ʼ\-–—]/.test(textNode.textContent)) {
+        var temp = document.createElement('span');
+        temp.innerHTML = textNode.textContent.replace(/['''ʼ\-–—]/g, '<span style="font-family:\'DM Sans\',sans-serif">$&</span>');
+        while (temp.firstChild) textNode.parentNode.insertBefore(temp.firstChild, textNode);
+        textNode.parentNode.removeChild(textNode);
+      }
+    });
+  });
+</script>
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-close').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
+
+<!-- Curseur personnalisé -->
+<div id="custom-cursor"><img src="../curseur-fleur.png" alt="" aria-hidden="true" /></div>
+<style>
+  body { cursor: none; }
+  a, button, [role="button"] { cursor: none; }
+  #custom-cursor { position: fixed; top: 0; left: 0; width: 38px; height: 38px; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: transform .12s ease, opacity .2s; opacity: 0; }
+  #custom-cursor img { width: 100%; height: 100%; object-fit: contain;  }
+  #custom-cursor.is-hovering { transform: translate(-50%,-50%) scale(1.25); }
+  @media (hover: none) { #custom-cursor { display: none; } body { cursor: auto; } }
+</style>
+<script>
+  (function() {
+    var cursor = document.getElementById('custom-cursor');
+    var mouseX = 0, mouseY = 0, curX = 0, curY = 0, raf;
+    document.addEventListener('mousemove', function(e) { mouseX = e.clientX; mouseY = e.clientY; cursor.style.opacity = '1'; if (!raf) raf = requestAnimationFrame(loop); });
+    document.addEventListener('mouseleave', function() { cursor.style.opacity = '0'; });
+    function loop() { curX += (mouseX-curX)*.18; curY += (mouseY-curY)*.18; cursor.style.left = curX+'px'; cursor.style.top = curY+'px'; raf = requestAnimationFrame(loop); }
+    document.querySelectorAll('a, button, [role="button"]').forEach(function(el) { el.addEventListener('mouseenter', function() { cursor.classList.add('is-hovering'); }); el.addEventListener('mouseleave', function() { cursor.classList.remove('is-hovering'); }); });
+  })();
+</script>
+</body>
+</html>

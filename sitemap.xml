@@ -7,13 +7,13 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.cassandrecm.com/conferences.html</loc>
+    <loc>https://www.cassandrecm.com/conferences/</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cassandrecm.com/blog.html</loc>
+    <loc>https://www.cassandrecm.com/blog/</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
