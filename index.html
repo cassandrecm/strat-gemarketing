@@ -130,16 +130,16 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <style>
-    @font-face {
-      font-family: 'The Seasons';
-      src: url('fonts/the-seasons.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+    @font-face { font-family: 'The Seasons'; src: url('fonts/the-seasons.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+    @font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 400; font-display: swap; src: url('fonts/dm-sans-italic-400.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/dm-sans-normal-300.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/dm-sans-normal-400.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/dm-sans-normal-500.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/dm-sans-normal-600.woff2') format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/dm-sans-normal-700.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Mono'; font-style: italic; font-weight: 400; font-display: swap; src: url('fonts/space-mono-italic-400.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/space-mono-normal-400.woff2') format('woff2'); }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -751,14 +751,6 @@
     <br/>
     <a href="conferences/" class="btn btn-primary">Découvrir mes conférences</a>
   </div>
-  <div class="conferences-right" style="display:flex;align-items:center;justify-content:center;padding:60px 48px;">
-    <div style="text-align:center;">
-      <img src="livre-cover.jpg" alt="Bouquet de psychoses" style="width:160px;border-radius:4px 12px 12px 4px;box-shadow:-8px 12px 32px rgba(0,0,0,.5);transform:perspective(600px) rotateY(-8deg);margin-bottom:24px;display:block;margin-left:auto;margin-right:auto;" />
-      <p style="font-size:13px;color:rgba(237,236,231,.5);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;font-family:'Space Mono',monospace;">Prévente — 25 $</p>
-      <p style="font-size:15px;color:rgba(237,236,231,.75);margin-bottom:20px;font-style:italic;">"Bouquet de psychoses"</p>
-      <a href="https://buy.stripe.com/7sY8wOfJ75gBe8r5Pi8g000" target="_blank" class="btn btn-primary" style="font-size:13px;padding:10px 20px;">Précommander</a>
-    </div>
-  </div>
 </section>
 
 <!-- ════════════ CTA ════════════ -->
@@ -798,7 +790,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Cassandre CM. Saint-Basile-le-Grand, Québec.</p>
+    <p>© 2026 Cassandre CM. Saint-Basile-le-Grand, Québec. &nbsp;·&nbsp; <a href="/politique-de-confidentialite/">Politique de confidentialité</a></p>
     <p>Fait avec intention &amp; un peu de café ☕</p>
   </div>
 </footer>
